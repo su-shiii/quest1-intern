@@ -9,14 +9,17 @@ public class OpsControl {
     private static final Map<String, Operations> OPS = new HashMap<>();
 
     static {
-    OPS.put("+", new Addition());
-    OPS.put("-", new Subtraction());
-    OPS.put("*", new Multiplication());
-    OPS.put("/", new Division());
-    OPS.put(">", new GreaterThanOperation());
-    OPS.put("<", new LessThanOperation());
-    OPS.put("=", new EqualityOperation());
-    OPS.put("eq", new EqOperation());
+    OPS.put("+",new Arithmetic("+"));
+    OPS.put("-",new Arithmetic("-"));
+    OPS.put("*",new Arithmetic("*"));
+    OPS.put("/",new Arithmetic("/"));
+
+    OPS.put(">", new LogicalOps(">"));
+    OPS.put("<", new LogicalOps("<"));
+    OPS.put(">=", new LogicalOps(">="));
+    OPS.put("<=", new LogicalOps("<="));
+    OPS.put("=", new LogicalOps("="));
+    OPS.put("eq", new LogicalOps("eq"));
     OPS.put("define", new DefineOperation());
     OPS.put("if", new IfOperation());         
     }
